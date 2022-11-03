@@ -1,8 +1,14 @@
 import express from "express";
+import * as dotenv from "dotenv";
+dotenv.config();
 
-const port = 4000;
+const port = process.env.PORT;
 const app = express();
 
-app.listen(port, () => {
+app.use(express.json());
+
+const server = app.listen(port, () => {
   console.log(`Listening on http://localhost port ${port}`);
 });
+
+server.on("error", Error);
