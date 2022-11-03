@@ -5,10 +5,12 @@ dotenv.config();
 const port = process.env.PORT;
 const app = express();
 
-app.use(express.json());
-
 const server = app.listen(port, () => {
   console.log(`Listening on http://localhost port ${port}`);
+});
+
+app.use((req, res) => {
+  res.status(200).json({ message: "getting info" });
 });
 
 server.on("error", Error);
