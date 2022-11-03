@@ -1,4 +1,4 @@
-export interface things {
+export interface Things {
   things: Container;
 }
 
