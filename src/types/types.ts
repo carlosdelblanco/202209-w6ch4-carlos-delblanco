@@ -1,8 +1,8 @@
-export interface Things {
-  things: Container;
-}
-
-export interface Container {
+export interface Subject {
   id: number;
   name: string;
+}
+
+export interface Things {
+  things: Subject[];
 }
